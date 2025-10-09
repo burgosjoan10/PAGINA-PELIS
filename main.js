@@ -16,15 +16,14 @@ function manejarCambioPantalla(e) {
 }
 
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     inicializarDOM('carrusel-principal', 'puntos-paginacion'); 
-    
-    portadas(); 
+    manejarCambioPantalla(mediaQueryMobile); // primero define el modo
+    portadas(); // luego genera las portadas
+    setInterval(moverCarrusel, 3000);
 
-    setInterval(moverCarrusel, 3000); 
-
-    manejarCambioPantalla(mediaQueryMobile);
 });
 
 mediaQueryMobile.addEventListener('change', manejarCambioPantalla);
+

@@ -1,6 +1,6 @@
 let indiceActual = 0;
 
-const contenedorPortada = document.getElementById("carrusel-principal");
+let contenedorPortada = document.getElementById("carrusel-principal");
 
 let pelisCarrusel = [ 
     {
@@ -75,11 +75,10 @@ function actualizarPuntos(nuevoIndice) {
     }
 }
 
+let contenedorPuntos = document.getElementById('puntos-paginacion');
 
 export function portadas () {
     
-    const contenedorPuntos = document.getElementById('puntos-paginacion');
-
     if (contenedorPortada) {
         contenedorPortada.innerHTML = '';
     }

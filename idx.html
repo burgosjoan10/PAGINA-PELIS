@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App peliculas</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,17 +13,29 @@
     <header>
         <nav>
             <img class="logo" src="logo.png" alt="Logo">
-            <ul class="nav-links">
-                <li href="#" id="link-inicio">Inicio</li>
-                <li href="#" id="link-nuevo">Nuevo</li>
-                <li href="#" id="link-popular">Popular</li>
-                <li href="#" id="link-mas-valorado">Mas valorado</li>
+
+        <!-- botón hamburguesa (solo visible en mobile) -->
+            <span class="material-symbols-outlined menu-hamburguesa" id="bton-menu">
+                menu
+            </span>
+
+        <!-- enlaces de navegación -->
+            <ul class="nav-links" id="menu-principal">
+                <li id="link-inicio">Inicio</li>
+                <li id="link-nuevo">Nuevo</li>
+                <li id="link-popular">Popular</li>
+                <li id="link-mas-valorado">Más valorado</li>
             </ul>
+
+        <!-- buscador -->
             <div class="contenedor-buscador">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="bton-buscador-mobile">
                     search
                 </span>
-                <input type="text" id="buscador" placeholder="Busca una pelicula o serie...">
+
+                <div class="desplegable-buscador" id="buscador-desplegado">
+                    <input type="text" id="buscador" placeholder="Busca una película o serie...">
+                </div>
             </div>
         </nav>
 
@@ -76,8 +88,9 @@
 
     </main>
 
+    <script type="module" src="api.js"></script> 
+    <script type="module" src="carousel.js"></script>
     <script type="module" src="./main.js"></script>
-    <script src="api.js"></script>
-    <script src="carousel.js"></script>
+    <script type="module" src="menus.js"></script>
 </body>
 </html>
