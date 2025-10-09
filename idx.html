@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App peliculas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img class="logo" src="logo.png" alt="Logo">
+            <ul class="nav-links">
+                <li href="#" id="link-inicio">Inicio</li>
+                <li href="#" id="link-nuevo">Nuevo</li>
+                <li href="#" id="link-popular">Popular</li>
+                <li href="#" id="link-mas-valorado">Mas valorado</li>
+            </ul>
+            <div class="contenedor-buscador">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" id="buscador" placeholder="Busca una pelicula o serie...">
+            </div>
+        </nav>
+
+        <div class="carrusel-marco-visible">
+            <div class="contenedor-portada" id="carrusel-principal">
+            
+            </div>
+        </div>
+
+         <div class="carrusel-puntos-paginacion" id="puntos-paginacion">
+        </div>
+
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion-activa">
+            <h2>Top 10 peliculas en ARGENTINA</h2>
+            <div class="contenedor-cine" id="peliculas-top-contenedor"></div>
+
+            <h2>Top 10 series en ARGENTINA</h2>
+            <div class="contenedor-cine" id="series-top-contenedor"></div>
+
+            <h2>Top 10 peliculas para niños</h2>
+            <div class="contenedor-cine" id="niños-top-contenedor"></div>
+        </section>
+
+        <section id="nuevo">
+            <h2>Lo nuevo</h2>
+            <div class="contenedor-cine" id="contenedor-nuevo"></div>
+        </section>
+
+        <section id="popular">
+            <h2>Lo mas popular</h2>
+            <div class="contenedor-cine" id="contenedor-popular"></div>
+        </section>
+
+        <section id="mas-valorado">
+            <h2>Lo nuevo</h2>
+            <div class="contenedor-cine" id="contenedor-mas-valorado"></div>
+        </section>
+
+        <div id="contenedor-modal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-btn">&times;</span>
+                <div id="modal-body">
+                    </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script type="module" src="./main.js"></script>
+    <script src="api.js"></script>
+    <script src="carousel.js"></script>
+</body>
+</html>

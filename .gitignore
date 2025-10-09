@@ -1,0 +1,13 @@
+Thumbs.db
+Desktop.ini
+*.log
+
+*.exe
+*.msi
+*.dmg
+
+.vscode/
+
+.DS_Store
+
+node_modules/
