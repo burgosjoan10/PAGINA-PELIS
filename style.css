@@ -41,6 +41,10 @@ nav {
     cursor: pointer;
 }
 
+.menu-hamburguesa {
+    display: none;
+}
+
 /* 🔹 NUEVO - Contenedor de links en nav */
 .nav-links {
     display: flex;
@@ -58,8 +62,13 @@ nav {
     color: #d9d1d1;
 }
 
-/* 🔹 BUSCADOR (versión escritorio) */
 .contenedor-buscador {
+    display: none;
+}
+
+/* 🔹 BUSCADOR (versión escritorio) */
+
+.contenedor-buscador-escritorio {
     display: flex;
     margin: auto;
     width: 50%;
@@ -70,7 +79,7 @@ nav {
     border-radius: 3px;
 }
 
-#buscador {
+#buscador-escritorio-input {
     width: 95%;
     padding: 7px;
     border-radius: 3px;
@@ -78,8 +87,20 @@ nav {
     outline: none;
     border: none;
     background-color: #10161d;
-    color: #fff;
+    color: #a0a3a6;
 }
+
+/* .contenedor-buscador {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    background-color: #10161d;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+*/
 
 .material-symbols-outlined {
     margin: auto;
@@ -202,6 +223,21 @@ nav {
     cursor: pointer;
 }
 
+.elemento-oculto {
+    display: none !important;
+}
+
+/* En la sección Global (fuera de @media) */
+.btn-cierre-mh {
+    display: none !important;
+    background: none;
+    border: none;
+    /* Asegúrate de que sea grande y blanco (o un color visible) */
+    font-size: 1.5rem; 
+    color: #FFFFFF; 
+    cursor: pointer;
+}
+
 /**********   RESPONSIVE   **********/
 
 @media (max-width: 700px) {
@@ -210,6 +246,23 @@ nav {
         display: block;
     }
 
+    .menu-hamburguesa {
+        display: block;
+        margin-right: 0;
+        margin-top: 15.5px;
+        padding: 0;
+    }
+
+    .btn-cierre-mh.activo {
+        position: absolute;
+        right: 0;
+        /* 🛑 CLAVE: El !important fuerza la visibilidad */
+        display: block !important; 
+        z-index: 1000;
+        /* Si quieres que se vea mejor, puedes darle un color fuerte aquí */
+        color: #ffffff !important; 
+    }   
+ 
     /* 🔹 ocultar links por defecto */
     .nav-links {
         display: none;
@@ -222,6 +275,7 @@ nav {
 
     /* 🔹 ajustar buscador normal */
     .contenedor-buscador {
+        display: block;
         background-color: #060d17;
         width: auto;
         margin: 0;
@@ -269,6 +323,14 @@ nav {
         max-width: 90%;
         gap: 10px; 
     }
+
+    .btn-cierre-mh.activo {
+        display: block;
+    }
+
+    .contenedor-buscador-escritorio {
+        display: none;
+    }
 }
 
 /**********   PUNTOS PAGINACIÓN   **********/
@@ -289,6 +351,6 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-.punto-paginacion.activo {
+.punto-paginacion.activo  {
     background-color: #fff;
 }
