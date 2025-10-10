@@ -227,12 +227,19 @@ nav {
     display: none !important;
 }
 
-/* En la sección Global (fuera de @media) */
 .btn-cierre-mh {
     display: none !important;
     background: none;
     border: none;
-    /* Asegúrate de que sea grande y blanco (o un color visible) */
+    font-size: 1.5rem; 
+    color: #FFFFFF; 
+    cursor: pointer;
+}
+
+.btn-cierre-b {
+    display: none;
+    background: none;
+    border: none;
     font-size: 1.5rem; 
     color: #FFFFFF; 
     cursor: pointer;
@@ -246,12 +253,26 @@ nav {
         display: block;
     }
 
+    /* boton hamburguesa y cierre */
+
     .menu-hamburguesa {
         display: block;
         margin-right: 0;
         margin-top: 15.5px;
         padding: 0;
     }
+
+    .btn-cierre-b.activo {
+        position: absolute;
+        right: 0;
+        /* 🛑 CLAVE: El !important fuerza la visibilidad */
+        display: block !important; 
+        z-index: 1000;
+        /* Si quieres que se vea mejor, puedes darle un color fuerte aquí */
+        color: #ffffff !important; 
+    }
+    
+    /* boton buscador y cierre */
 
     .btn-cierre-mh.activo {
         position: absolute;
@@ -261,7 +282,7 @@ nav {
         z-index: 1000;
         /* Si quieres que se vea mejor, puedes darle un color fuerte aquí */
         color: #ffffff !important; 
-    }   
+    }
  
     /* 🔹 ocultar links por defecto */
     .nav-links {
@@ -276,14 +297,22 @@ nav {
     /* 🔹 ajustar buscador normal */
     .contenedor-buscador {
         display: block;
+        position: relative;
         background-color: #060d17;
         width: auto;
         margin: 0;
         padding: 0;
     }
 
-    #buscador {
-        display: none;
+    /* buscador mobile */
+
+    .buscadorMobile.activo {
+        width: 85%;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        margin: 4px;
+        border-radius: 8px;
     }
 
     /* 🔹 Carrusel más pequeño */
