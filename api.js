@@ -21,7 +21,6 @@ function construirCarrusel(peliculas, idContenedor) {
         const tarjetaHTML = `
             <div class="pelicula-tarjeta">
                 <img src = "${urlPortada}" alt="${pelicula.title} Poster" class="pelicula-portada">
-                <p class="pelicula-titulo">"${pelicula.title}"</p>
             </div>
         `;
 

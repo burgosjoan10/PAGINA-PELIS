@@ -15,7 +15,6 @@ function manejarCambioPantalla(e) {
     portadas();
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
     inicializarDOM('carrusel-principal', 'puntos-paginacion'); 

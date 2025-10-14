@@ -17,6 +17,10 @@ body {
 
 /**********   NAVEGADOR   **********/
 
+header {
+    margin-bottom: 30px;
+}
+
 .logo {
     width: 130px;
     height: 60px;
@@ -158,7 +162,7 @@ nav {
     font-size: 22px;
 }
 
-/**********   CARRUSEL   **********/
+/**********   CARRUSEL MAIN  **********/
 
 .carrusel-marco-visible { 
     width: 100%;
@@ -382,4 +386,86 @@ nav {
 
 .punto-paginacion.activo  {
     background-color: #fff;
+}
+
+
+
+/*---------- CARRUSEL TOP 10 ARG -----------*/
+
+.contenedor-cine {
+    display: flex;
+    gap: 13px; /* Aumentamos ligeramente el espacio en PC */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding-left: 10px; /* Más espacio a la izquierda para un look más limpio */
+    padding-right: 10px;
+}
+
+/* Ocultar la barra de desplazamiento (si no la quieres visible en PC) */
+.contenedor-cine:-webkit-scrollbar {
+    display: none;
+}
+
+.contenedor-cine {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.seccion-activa h2 {
+    font-size: 1.3em;
+    padding-left: 15px; /* Ajusta el padding para la pantalla pequeña */
+    margin-bottom: 5px;
+}
+
+.pelicula-tarjeta {
+    /* 🛑 CLAVE PC: Hacemos la tarjeta más grande */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.pelicula-portada {
+    width: 100%;
+    /* Ajustamos la altura proporcionalmente para el nuevo ancho de 200px */
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(50, 46, 46, 0.5); /* Sombra un poco más fuerte */
+}
+
+.pelicula-tarjeta:hover {
+    transform: scale(1.04); /* Un ligero efecto de zoom */
+    z-index: 10;
+}
+
+@media (max-width: 700px) {
+    
+    .contenedor-cine:-webkit-scrollbar {
+        display: none;
+    }
+
+    .contenedor-cine {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        padding-left: 6px;
+        padding-right: 6px;
+        gap: 6px;
+    }
+
+    .pelicula-tarjeta {
+        /* Usamos un porcentaje para que se adapte a cualquier tamaño de celular. 
+           Esto asegura que al menos 2.5 películas sean visibles. */
+        min-width: 45%; 
+        height: auto;
+    }
+
+    .pelicula-portada {
+        width: 100%;
+        /* Aseguramos que la altura se mantenga proporcional al nuevo ancho del 35% */
+        /* Si usas height: auto, se ajustará automáticamente por el width: 100%; */
+        height: 100%; 
+        border-radius: 10px;
+    }
 }
