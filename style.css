@@ -470,6 +470,8 @@ nav {
     }
 }
 
+/*------------- INFORMACION DEL MODAL Y ESTRUCTURACION --------------*/
+
 
 .modal-backdrop {
     display: none;
@@ -493,4 +495,30 @@ nav {
     margin: auto;
     margin-top: 100px;
     height: 80%;
+}
+
+.modal-detalle-grid {
+    display: flex;
+    background-color: red;
+}
+
+.modal-video-container {
+    min-width: 70%;
+    background-color: #dfd110;
+}
+
+.modal-info {
+    background-color: #25b5b2;
+}
+
+.modal-rating {
+    background-color: orange;
+}
+
+.modal-generos {
+    background-color: purple;
+}
+
+.sinopsis {
+    background-color: rgb(238, 13, 50);
 }
